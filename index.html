@@ -424,6 +424,48 @@
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+                /* Style du bouton "CLIQUEZ ICI" */
+        .btn-demo-link {
+            display: block;
+            width: fit-content;
+            margin: 20px auto; /* Centre le bouton avec de l'espace autour */
+            padding: 9.6px 32px;
+            background-color: var(--primary-orange);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.2);
+        }
+
+        .btn-demo-link:hover {
+            background-color: var(--dark-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.3);
+            color: white;
+        }
+
+                /* --- AJUSTEMENTS POUR MOBILE --- */
+        @media (max-width: 600px) {
+            header {
+                padding: 0 15px; /* Réduit l'espace vide sur les côtés du header */
+            }
+            .brand-name {
+                font-size: 1.3rem; /* Réduit la taille du titre Rylia */
+            }
+            .brand-slogan {
+                display: none; /* Cache le slogan qui prend trop de place en largeur */
+            }
+            .contact-btn {
+                padding: 8px 12px; /* Rend le bouton contact un peu plus petit */
+                font-size: 0.85rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -533,6 +575,8 @@
                         <p class="mockup-caption">Accueil de la carte</p>
                     </div>
                 </div>
+                <a href="https://rylia.fr/carte" target="_blank" class="btn-demo-link">
+                    CLIQUEZ ICI</a>
             </div>
 
             <div class="detail-section">
@@ -623,6 +667,8 @@
                         <p class="mockup-caption">Le client récupère son coupon</p>
                     </div>
                 </div>
+                <a href="https://rylia.fr/roue" target="_blank" class="btn-demo-link">
+                    CLIQUEZ ICI</a>
             </div>
 
             <div class="detail-section">
@@ -725,6 +771,8 @@
                         <p class="mockup-caption">Accueil espace client</p>
                     </div>
                 </div>
+                <a href="https://rylia.fr/fidelite" target="_blank" class="btn-demo-link">
+                    CLIQUEZ ICI</a>
             </div>
 
             <div class="detail-section">
