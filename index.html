@@ -708,6 +708,54 @@
         pointer-events: all;
     }
 
+    /* --- STYLE SECTION SITE VITRINE CORRIGÉ --- */
+    .card-split-section {
+        display: flex;
+        align-items: center; 
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    .split-list {
+        flex: 1; /* Prend exactement 50% de la largeur */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Crée 2 colonnes égales automatiquement */
+        gap: 10px 15px; /* Espace entre les lignes et colonnes */
+        font-size: 0.95rem;
+        padding-right: 20px;
+        border-right: 1px solid #e0e0e0; /* La barre sera pile au milieu car flex est à 1 pour les deux côtés */
+        line-height: 1.4;
+    }
+
+    .split-action {
+        flex: 1; /* Prend exactement les autres 50% */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 20px;
+    }
+
+    /* --- AJUSTEMENTS POUR MOBILE (Responsive) --- */
+    @media (max-width: 600px) {
+        .card-split-section {
+            flex-direction: column; /* Empile la liste et le bouton */
+            align-items: stretch;
+        }
+        .split-list {
+            grid-template-columns: 1fr; /* Repasse sur 1 seule colonne (liste à la chaîne) */
+            border-right: none; /* Enlève la barre verticale */
+            border-bottom: 1px solid #e0e0e0; /* Met la barre en horizontal comme les autres blocs */
+            padding-right: 0;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .split-action {
+            padding-left: 0;
+        }
+    }
+
     </style>
 </head>
 <body>
@@ -759,8 +807,10 @@
             
             <div class="card-split-section">
                 <div class="split-list">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Design 100% sur-mesure&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Optimisation du référencement<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Adapté aux mobiles et tablettes&nbsp;&nbsp;&nbsp;&nbsp;• Accompagnement dédié
+                    <span>• Optimisation du référencement</span>
+                    <span>• Adapté aux mobiles et tablettes</span>
+                    <span>• Accompagnement dédié</span>
+                    <span>• Design 100% sur-mesure</span>
                 </div>
                 
                 <div class="split-action">
