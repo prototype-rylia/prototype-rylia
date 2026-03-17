@@ -153,6 +153,8 @@
             padding: 30px 40px 15px 40px;
             background-color: #ffffff;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .concept-container {
@@ -785,7 +787,8 @@
 
     <div id="main-home" class="view active">
         <section class="concept-section">
-            <div class="concept-container" data-aos="fade-in" data-aos-duration="1200">
+            <canvas id="particles-canvas" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0;"></canvas>
+            <div class="concept-container" data-aos="fade-in" data-aos-duration="1200" style="position:relative; z-index:1;">
                 <h2 class="concept-title">C'est quoi Rylia ?</h2>
                 <p class="concept-text">
                     Rylia accompagne les commerçants dans leur <span class="highlight-text">transformation numérique</span> en créant des ponts entre leur <br>savoir-faire et les outils de demain.<br>
@@ -874,7 +877,57 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="container">
+            <h3 class="section-title">Comment ça marche ?</h3>
+            <div style="background:white; padding:20px; border-radius:8px; border-bottom:3px solid #FF6B00; box-shadow:0 4px 6px rgba(0,0,0,0.05);">
+                <div style="display:flex; justify-content:center; align-items:flex-start; gap:0; max-width:1000px; margin:20px auto 0;">
+
+                    <div style="flex:1; display:flex; flex-direction:column; align-items:center; position:relative;">
+                        <div style="position:absolute; top:28px; left:50%; width:100%; height:2px; background:linear-gradient(90deg,#FF6B00,#ffd5b0); z-index:0;"></div>
+                        <div style="width:56px; height:56px; border-radius:50%; background:#FF6B00; color:white; font-size:1.4rem; display:flex; align-items:center; justify-content:center; position:relative; z-index:1; box-shadow:0 4px 15px rgba(255,107,0,0.3);">💬</div>
+                        <div style="margin-top:16px; padding:0 10px; text-align:center;">
+                            <p style="font-size:0.85rem; font-weight:700; color:#FF6B00; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:4px;">Étape 1</p>
+                            <p style="font-size:1rem; font-weight:700; color:#1a1a1a; margin-bottom:6px;">Remplissez un formulaire</p>
+                            <p style="font-size:0.85rem; color:#444; line-height:1.5;">Dites-nous tout : on s'occupe du reste.</p>
+                        </div>
+                    </div>
+
+                    <div style="flex:1; display:flex; flex-direction:column; align-items:center; position:relative;">
+                        <div style="position:absolute; top:28px; left:50%; width:100%; height:2px; background:linear-gradient(90deg,#FF6B00,#ffd5b0); z-index:0;"></div>
+                        <div style="width:56px; height:56px; border-radius:50%; background:#FF6B00; color:white; font-size:1.4rem; display:flex; align-items:center; justify-content:center; position:relative; z-index:1; box-shadow:0 4px 15px rgba(255,107,0,0.3);">🎯</div>
+                        <div style="margin-top:16px; padding:0 10px; text-align:center;">
+                            <p style="font-size:0.85rem; font-weight:700; color:#FF6B00; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:4px;">Étape 2</p>
+                            <p style="font-size:1rem; font-weight:700; color:#1a1a1a; margin-bottom:6px;">Analyse & proposition</p>
+                            <p style="font-size:0.85rem; color:#444; line-height:1.5;">Pas de solution toute faite : on construit la vôtre.</p>
+                        </div>
+                    </div>
+
+                    <div style="flex:1; display:flex; flex-direction:column; align-items:center; position:relative;">
+                        <div style="position:absolute; top:28px; left:50%; width:100%; height:2px; background:linear-gradient(90deg,#FF6B00,#ffd5b0); z-index:0;"></div>
+                        <div style="width:56px; height:56px; border-radius:50%; background:#FF6B00; color:white; font-size:1.4rem; display:flex; align-items:center; justify-content:center; position:relative; z-index:1; box-shadow:0 4px 15px rgba(255,107,0,0.3);">⚙️</div>
+                        <div style="margin-top:16px; padding:0 10px; text-align:center;">
+                            <p style="font-size:0.85rem; font-weight:700; color:#FF6B00; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:4px;">Étape 3</p>
+                            <p style="font-size:1rem; font-weight:700; color:#1a1a1a; margin-bottom:6px;">Création & développement</p>
+                            <p style="font-size:0.85rem; color:#444; line-height:1.5;">On donne vie à votre projet, brique par brique, avec vous.</p>
+                        </div>
+                    </div>
+
+                    <div style="flex:1; display:flex; flex-direction:column; align-items:center; position:relative;">
+                        <div style="width:56px; height:56px; border-radius:50%; background:#FF6B00; color:white; font-size:1.4rem; display:flex; align-items:center; justify-content:center; position:relative; z-index:1; box-shadow:0 4px 15px rgba(255,107,0,0.3);">🚀</div>
+                        <div style="margin-top:16px; padding:0 10px; text-align:center;">
+                            <p style="font-size:0.85rem; font-weight:700; color:#FF6B00; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:4px;">Étape 4</p>
+                            <p style="font-size:1rem; font-weight:700; color:#1a1a1a; margin-bottom:6px;">Intégration & suivi</p>
+                            <p style="font-size:0.85rem; color:#444; line-height:1.5;">Lancement, ajustements, évolutions : on est là sur la durée.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
+
 
     <div id="detail-carte" class="view">
         <div class="detail-page">
@@ -1471,6 +1524,53 @@
             transitionEl.classList.add('is-loaded');
         }
     });
+    </script>
+
+    <script>
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+        const section = canvas.parentElement;
+        canvas.width = section.offsetWidth;
+        canvas.height = section.offsetHeight;
+    }
+
+    function createParticles() {
+        particles = [];
+        const count = Math.floor((canvas.width * canvas.height) / 18000);
+        for (let i = 0; i < count; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                r: Math.random() * 3 + 1,
+                dx: (Math.random() - 0.5) * 0.4,
+                dy: (Math.random() - 0.5) * 0.4,
+                opacity: Math.random() * 0.4 + 0.1
+            });
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 107, 0, ${p.opacity})`;
+            ctx.fill();
+            p.x += p.dx;
+            p.y += p.dy;
+            if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        });
+        requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', () => { resizeCanvas(); createParticles(); });
+    resizeCanvas();
+    createParticles();
+    draw();
     </script>
 
 </body>
