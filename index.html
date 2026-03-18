@@ -591,10 +591,12 @@
 
         /* --- FOOTER --- */
         .site-footer {
-            background-color: #f1f1f1; /* Fond gris clair */
-            color: var(--text-dark); /* Texte par défaut en foncé */
+            background-color: #f1f1f1;
+            color: var(--text-dark);
             padding: 60px 20px 20px 20px;
             font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-container {
@@ -783,6 +785,135 @@
         }
     }
 
+    /* --- CARTES TARIFS --- */
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+        padding: 10px 0;
+        overflow: visible;
+    }
+    .price-card {
+        background: white;
+        border: 0.5px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+
+    }
+    .price-card:hover {
+        border-color: var(--primary-orange);
+        box-shadow: 0 6px 20px rgba(255, 107, 0, 0.1);
+        transform: scale(1.02);
+    }
+    .price-card.featured {
+        border: 2px solid var(--primary-orange);
+    }
+    .price-badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary-orange);
+        color: white;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 3px 12px;
+        border-radius: 20px;
+        white-space: nowrap;
+    }
+    .price-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: #fff3e8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    .price-name {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-light);
+        margin-bottom: 4px;
+    }
+    .price-amount {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text-dark);
+        line-height: 1.1;
+        margin-bottom: 2px;
+    }
+    .price-amount span {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--text-light);
+    }
+    .price-sub {
+        font-size: 12px;
+        color: var(--text-light);
+        margin-bottom: 14px;
+    }
+    .price-divider {
+        border: none;
+        border-top: 1px solid #e0e0e0;
+        margin: 0 0 12px;
+    }
+    .price-feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 13px;
+        color: var(--text-dark);
+        margin-bottom: 8px;
+    }
+    .price-check {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #fff3e8;
+        color: var(--primary-orange);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        flex-shrink: 0;
+        margin-top: 1px;
+    }
+    .price-cta {
+        margin-top: auto;
+        padding-top: 14px;
+    }
+    .price-cta button {
+        width: 100%;
+        padding: 9px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        border: 1.5px solid var(--primary-orange);
+        background: transparent;
+        color: var(--primary-orange);
+        transition: 0.3s;
+        font-family: inherit;
+    }
+    .price-cta button:hover {
+        background: var(--primary-orange);
+        color: white;
+    }
+    .price-card.featured .price-cta button {
+        background: var(--primary-orange);
+        color: white;
+    }
+    .price-card.featured .price-cta button:hover {
+        background: var(--dark-orange);
+    }
+
     </style>
 </head>
 <body>
@@ -901,6 +1032,63 @@
             </div>
         </div>
 
+        <div class="container">
+            <h3 class="section-title">Nos tarifs</h3>
+            <div class="pricing-grid">
+                <div class="price-card featured" onclick="showView('contact-view')" style="cursor:pointer;">
+                    <div class="price-badge">★ Populaire</div>
+                    <div class="price-icon">🌐</div>
+                    <p class="price-name">Site Internet</p>
+                    <p class="price-amount">Sur devis</p>
+                    <p class="price-sub">Projet 100% sur-mesure</p>
+                    <hr class="price-divider">
+                    <div class="price-feature"><div class="price-check">✓</div>Design personnalisé</div>
+                    <div class="price-feature"><div class="price-check">✓</div>Maintenance & mises à jour</div>
+                    <div class="price-feature"><div class="price-check">✓</div>Adapté mobile & tablette</div>
+                    <div class="price-feature"><div class="price-check">✓</div>Accompagnement dédié</div>
+                    <div class="price-cta"><button onclick="showView('contact-view')">Nous contacter</button></div>
+                </div>
+
+                <div class="price-card" onclick="showView('contact-view')" style="cursor:pointer;">
+                    <div class="price-icon">🍽️</div>
+                    <p class="price-name">Carte digitale</p>
+                    <p class="price-amount">29,90€ <span>/ mois</span></p>
+                    <p class="price-sub">+ 295€ de mise en place</p>
+                    <hr class="price-divider">
+                    <div class="price-feature"><div class="price-check">✓</div>Menu visuel personnalisé</div>
+                    <div class="price-feature"><div class="price-check">✓</div>Filtres & allergènes</div>
+                    <div class="price-feature"><div class="price-check">✓</div>QR Code inclus</div>
+                    <div class="price-feature"><div class="price-check">✓</div>Mises à jour illimitées</div>
+                    <div class="price-cta"><button onclick="showView('contact-view')">Nous contacter</button></div>
+                </div>
+
+                <div class="price-card" onclick="showView('contact-view')" style="cursor:pointer;">
+                    <div class="price-icon">⭐</div>
+                    <p class="price-name">Roue d'avis</p>
+                    <p class="price-amount">29,90€ <span>/ mois</span></p>
+                    <p class="price-sub">+ 255€ de mise en place</p>
+                    <hr class="price-divider">
+                    <div class="price-feature"><div class="price-check">✓</div>Roue personnalisable</div>
+                    <div class="price-feature"><div class="price-check">✓</div>Envoi automatique par mail</div>
+                    <div class="price-feature"><div class="price-check">✓</div>Lien Google intégré</div>
+                    <div class="price-feature"><div class="price-check">✓</div>Tableau de bord des avis</div>
+                    <div class="price-cta"><button onclick="showView('contact-view')">Nous contacter</button></div>
+                </div>
+
+                <div class="price-card" onclick="showView('contact-view')" style="cursor:pointer;">
+                    <div class="price-icon">🎁</div>
+                    <p class="price-name">Web fidélité</p>
+                    <p class="price-amount">39,90€ <span>/ mois</span></p>
+                    <p class="price-sub">+ 345€ de mise en place</p>
+                    <hr class="price-divider">
+                    <div class="price-feature"><div class="price-check">✓</div>Programme de points</div>
+                    <div class="price-feature"><div class="price-check">✓</div>Récompenses sur-mesure</div>
+                    <div class="price-feature"><div class="price-check">✓</div>Sans carte papier</div>
+                    <div class="price-feature"><div class="price-check">✓</div>Interface client intuitive</div>
+                    <div class="price-cta"><button onclick="showView('contact-view')">Nous contacter</button></div>
+                </div>
+            </div>
+        </div>
 
         <div class="container">
             <h3 class="section-title">Comment ça marche ?</h3>
@@ -952,8 +1140,9 @@
     </div>
 
 
-    <div id="detail-carte" class="view">
-        <div class="detail-page">
+    <div id="detail-carte" class="view" style="position:relative;">
+        <canvas id="particles-canvas-carte" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0;"></canvas>
+        <div class="detail-page" style="position:relative; z-index:1;">
             <h1 style="color: var(--primary-orange); text-align: center; margin-top: 20px;">Carte Digitale</h1>
             <p style="margin-top:20px;">Nous vous proposons une carte digitale dynamique et personnalisée pour le menu de votre restaurant</p>
 
@@ -1044,8 +1233,9 @@
         </div>
     </div>
 
-    <div id="detail-roue" class="view">
-        <div class="detail-page">
+    <div id="detail-roue" class="view" style="position:relative;">
+        <canvas id="particles-canvas-roue" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0;"></canvas>
+        <div class="detail-page" style="position:relative; z-index:1;">
             <h1 style="color: var(--primary-orange); text-align: center; margin-top: 20px;">Roue d'avis 5 étoiles</h1>
             <p style="margin-top:20px;">Boostez votre visibilité locale avec notre système de roue automatisé.</p>
             
@@ -1148,8 +1338,9 @@
         </div>
     </div>
 
-    <div id="detail-fidelite" class="view">
-        <div class="detail-page">
+    <div id="detail-fidelite" class="view" style="position:relative;">
+        <canvas id="particles-canvas-fidelite" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0;"></canvas>
+        <div class="detail-page" style="position:relative; z-index:1;">
             <h1 style="color: var(--primary-orange); text-align: center; margin-top: 20px;">Web fidélité</h1>
             <p style="margin-top:20px;">Récompensez vos clients les plus fidèles grâce à une solution 100% digitale et sans contrainte.</p>
             
@@ -1238,8 +1429,9 @@
         </div>
     </div>
 
-    <div id="contact-view" class="view">
-        <div class="detail-page">
+    <div id="contact-view" class="view" style="position:relative;">
+        <canvas id="particles-canvas-contact" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0;"></canvas>
+        <div class="detail-page" style="position:relative; z-index:1;">
             <p style="margin-top:20px; text-align:center;">Une question sur nos solutions ? Envie de digitaliser votre commerce ?<br>Notre équipe est à votre écoute.</p>
 
             <div class="detail-section">
@@ -1518,8 +1710,8 @@
     </script>
 
     <script>
-    // On sélectionne toutes les cartes de la page
-    const cards = document.querySelectorAll('.card');
+    // On sélectionne toutes les cartes de la page sauf price
+    const cards = document.querySelectorAll('.card:not(.price-card)');
 
     cards.forEach(card => {
         // On cherche s'il y a un lien (balise <a>) ou un <button> dans la carte
@@ -1594,6 +1786,202 @@
     resizeCanvas();
     createParticles();
     draw();
+    </script>
+
+    <script>
+    const canvasContact = document.getElementById('particles-canvas-contact');
+    const ctxContact = canvasContact.getContext('2d');
+    let particlesContact = [];
+
+    function resizeCanvasContact() {
+        canvasContact.width = window.innerWidth;
+        canvasContact.height = window.innerHeight;
+    }
+
+    function createParticlesContact() {
+        particlesContact = [];
+        const count = Math.floor((canvasContact.width * canvasContact.height) / 18000);
+        for (let i = 0; i < count; i++) {
+            particlesContact.push({
+                x: Math.random() * canvasContact.width,
+                y: Math.random() * canvasContact.height,
+                r: Math.random() * 3 + 1,
+                dx: (Math.random() - 0.5) * 0.4,
+                dy: (Math.random() - 0.5) * 0.4,
+                opacity: Math.random() * 0.4 + 0.1
+            });
+        }
+    }
+
+    function drawContact() {
+        ctxContact.clearRect(0, 0, canvasContact.width, canvasContact.height);
+        particlesContact.forEach(p => {
+            ctxContact.beginPath();
+            ctxContact.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctxContact.fillStyle = `rgba(255, 107, 0, ${p.opacity})`;
+            ctxContact.fill();
+            p.x += p.dx;
+            p.y += p.dy;
+            if (p.x < 0 || p.x > canvasContact.width) p.dx *= -1;
+            if (p.y < 0 || p.y > canvasContact.height) p.dy *= -1;
+        });
+        requestAnimationFrame(drawContact);
+    }
+
+    resizeCanvasContact();
+    createParticlesContact();
+    drawContact();
+    window.addEventListener('resize', () => {
+        resizeCanvasContact();
+        createParticlesContact();
+    });
+    </script>
+
+    <script>
+    const canvasCarte = document.getElementById('particles-canvas-carte');
+    const ctxCarte = canvasCarte.getContext('2d');
+    let particlesCarte = [];
+
+    function resizeCanvasCarte() {
+        canvasCarte.width = window.innerWidth;
+        canvasCarte.height = window.innerHeight;
+    }
+
+    function createParticlesCarte() {
+        particlesCarte = [];
+        const count = Math.floor((canvasCarte.width * canvasCarte.height) / 18000);
+        for (let i = 0; i < count; i++) {
+            particlesCarte.push({
+                x: Math.random() * canvasCarte.width,
+                y: Math.random() * canvasCarte.height,
+                r: Math.random() * 3 + 1,
+                dx: (Math.random() - 0.5) * 0.4,
+                dy: (Math.random() - 0.5) * 0.4,
+                opacity: Math.random() * 0.4 + 0.1
+            });
+        }
+    }
+
+    function drawCarte() {
+        ctxCarte.clearRect(0, 0, canvasCarte.width, canvasCarte.height);
+        particlesCarte.forEach(p => {
+            ctxCarte.beginPath();
+            ctxCarte.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctxCarte.fillStyle = `rgba(255, 107, 0, ${p.opacity})`;
+            ctxCarte.fill();
+            p.x += p.dx;
+            p.y += p.dy;
+            if (p.x < 0 || p.x > canvasCarte.width) p.dx *= -1;
+            if (p.y < 0 || p.y > canvasCarte.height) p.dy *= -1;
+        });
+        requestAnimationFrame(drawCarte);
+    }
+
+    resizeCanvasCarte();
+    createParticlesCarte();
+    drawCarte();
+    window.addEventListener('resize', () => {
+        resizeCanvasCarte();
+        createParticlesCarte();
+    });
+    </script>
+
+    <script>
+    const canvasRoue = document.getElementById('particles-canvas-roue');
+    const ctxRoue = canvasRoue.getContext('2d');
+    let particlesRoue = [];
+
+    function resizeCanvasRoue() {
+        canvasRoue.width = window.innerWidth;
+        canvasRoue.height = window.innerHeight;
+    }
+
+    function createParticlesRoue() {
+        particlesRoue = [];
+        const count = Math.floor((canvasRoue.width * canvasRoue.height) / 18000);
+        for (let i = 0; i < count; i++) {
+            particlesRoue.push({
+                x: Math.random() * canvasRoue.width,
+                y: Math.random() * canvasRoue.height,
+                r: Math.random() * 3 + 1,
+                dx: (Math.random() - 0.5) * 0.4,
+                dy: (Math.random() - 0.5) * 0.4,
+                opacity: Math.random() * 0.4 + 0.1
+            });
+        }
+    }
+
+    function drawRoue() {
+        ctxRoue.clearRect(0, 0, canvasRoue.width, canvasRoue.height);
+        particlesRoue.forEach(p => {
+            ctxRoue.beginPath();
+            ctxRoue.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctxRoue.fillStyle = `rgba(255, 107, 0, ${p.opacity})`;
+            ctxRoue.fill();
+            p.x += p.dx;
+            p.y += p.dy;
+            if (p.x < 0 || p.x > canvasRoue.width) p.dx *= -1;
+            if (p.y < 0 || p.y > canvasRoue.height) p.dy *= -1;
+        });
+        requestAnimationFrame(drawRoue);
+    }
+
+    resizeCanvasRoue();
+    createParticlesRoue();
+    drawRoue();
+    window.addEventListener('resize', () => {
+        resizeCanvasRoue();
+        createParticlesRoue();
+    });
+    </script>
+
+    <script>
+    const canvasFidelite = document.getElementById('particles-canvas-fidelite');
+    const ctxFidelite = canvasFidelite.getContext('2d');
+    let particlesFidelite = [];
+
+    function resizeCanvasFidelite() {
+        canvasFidelite.width = window.innerWidth;
+        canvasFidelite.height = window.innerHeight;
+    }
+
+    function createParticlesFidelite() {
+        particlesFidelite = [];
+        const count = Math.floor((canvasFidelite.width * canvasFidelite.height) / 18000);
+        for (let i = 0; i < count; i++) {
+            particlesFidelite.push({
+                x: Math.random() * canvasFidelite.width,
+                y: Math.random() * canvasFidelite.height,
+                r: Math.random() * 3 + 1,
+                dx: (Math.random() - 0.5) * 0.4,
+                dy: (Math.random() - 0.5) * 0.4,
+                opacity: Math.random() * 0.4 + 0.1
+            });
+        }
+    }
+
+    function drawFidelite() {
+        ctxFidelite.clearRect(0, 0, canvasFidelite.width, canvasFidelite.height);
+        particlesFidelite.forEach(p => {
+            ctxFidelite.beginPath();
+            ctxFidelite.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctxFidelite.fillStyle = `rgba(255, 107, 0, ${p.opacity})`;
+            ctxFidelite.fill();
+            p.x += p.dx;
+            p.y += p.dy;
+            if (p.x < 0 || p.x > canvasFidelite.width) p.dx *= -1;
+            if (p.y < 0 || p.y > canvasFidelite.height) p.dy *= -1;
+        });
+        requestAnimationFrame(drawFidelite);
+    }
+
+    resizeCanvasFidelite();
+    createParticlesFidelite();
+    drawFidelite();
+    window.addEventListener('resize', () => {
+        resizeCanvasFidelite();
+        createParticlesFidelite();
+    });
     </script>
 
 </body>
