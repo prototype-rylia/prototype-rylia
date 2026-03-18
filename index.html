@@ -926,7 +926,7 @@
 
     <header>
         <div class="nav-section left">
-            <button id="header-back-btn" class="back-btn-header" onclick="showView('main-home')">↩ Retour</button>
+            <button id="header-back-btn" class="back-btn-header" onclick="goBack()">↩ Retour</button>
         </div>
         
         <div class="nav-section center">
@@ -1037,56 +1037,56 @@
             <div class="pricing-grid">
                 <div class="price-card featured" onclick="showView('contact-view')" style="cursor:pointer;">
                     <div class="price-badge">★ Populaire</div>
-                    <div class="price-icon">🌐</div>
-                    <p class="price-name">Site Internet</p>
-                    <p class="price-amount">Sur devis</p>
-                    <p class="price-sub">Projet 100% sur-mesure</p>
-                    <hr class="price-divider">
-                    <div class="price-feature"><div class="price-check">✓</div>Design personnalisé</div>
-                    <div class="price-feature"><div class="price-check">✓</div>Maintenance & mises à jour</div>
-                    <div class="price-feature"><div class="price-check">✓</div>Adapté mobile & tablette</div>
-                    <div class="price-feature"><div class="price-check">✓</div>Accompagnement dédié</div>
-                    <div class="price-cta"><button onclick="showView('contact-view')">Nous contacter</button></div>
-                </div>
+                        <div class="price-icon">🌐</div>
+                        <p class="price-name">Site Internet</p>
+                        <p class="price-amount">Sur devis</p>
+                        <p class="price-sub">Projet 100% sur-mesure</p>
+                        <hr class="price-divider">
+                        <div class="price-feature"><div class="price-check">✓</div>Design personnalisé</div>
+                        <div class="price-feature"><div class="price-check">✓</div>Maintenance & mises à jour</div>
+                        <div class="price-feature"><div class="price-check">✓</div>Adapté mobile & tablette</div>
+                        <div class="price-feature"><div class="price-check">✓</div>Accompagnement dédié</div>
+                        <div class="price-cta"><button onclick="showView('contact-view')">Nous contacter</button></div>
+                    </div>
 
-                <div class="price-card" onclick="showView('contact-view')" style="cursor:pointer;">
-                    <div class="price-icon">🍽️</div>
-                    <p class="price-name">Carte digitale</p>
-                    <p class="price-amount">29,90€ <span>/ mois</span></p>
-                    <p class="price-sub">+ 295€ de mise en place</p>
-                    <hr class="price-divider">
-                    <div class="price-feature"><div class="price-check">✓</div>Menu visuel personnalisé</div>
-                    <div class="price-feature"><div class="price-check">✓</div>Filtres & allergènes</div>
-                    <div class="price-feature"><div class="price-check">✓</div>QR Code inclus</div>
-                    <div class="price-feature"><div class="price-check">✓</div>Mises à jour illimitées</div>
-                    <div class="price-cta"><button onclick="showView('contact-view')">Nous contacter</button></div>
-                </div>
+                    <div class="price-card" onclick="showView('detail-carte')" style="cursor:pointer;">
+                        <div class="price-icon">🍽️</div>
+                        <p class="price-name">Carte digitale</p>
+                        <p class="price-amount">29,90€ <span>/ mois</span></p>
+                        <p class="price-sub">+ 295€ de mise en place</p>
+                        <hr class="price-divider">
+                        <div class="price-feature"><div class="price-check">✓</div>Menu visuel personnalisé</div>
+                        <div class="price-feature"><div class="price-check">✓</div>Filtres & allergènes</div>
+                        <div class="price-feature"><div class="price-check">✓</div>QR Code inclus</div>
+                        <div class="price-feature"><div class="price-check">✓</div>Mises à jour illimitées</div>
+                        <div class="price-cta"><button onclick="showView('detail-carte')">Découvrir</button></div>
+                    </div>
 
-                <div class="price-card" onclick="showView('contact-view')" style="cursor:pointer;">
-                    <div class="price-icon">⭐</div>
-                    <p class="price-name">Roue d'avis</p>
-                    <p class="price-amount">34,90€ <span>/ mois</span></p>
-                    <p class="price-sub">+ 255€ de mise en place</p>
-                    <hr class="price-divider">
-                    <div class="price-feature"><div class="price-check">✓</div>Roue personnalisable</div>
-                    <div class="price-feature"><div class="price-check">✓</div>Envoi automatique par mail</div>
-                    <div class="price-feature"><div class="price-check">✓</div>Lien Google intégré</div>
-                    <div class="price-feature"><div class="price-check">✓</div>Tableau de bord des avis</div>
-                    <div class="price-cta"><button onclick="showView('contact-view')">Nous contacter</button></div>
-                </div>
+                    <div class="price-card" onclick="showView('detail-roue')" style="cursor:pointer;">
+                        <div class="price-icon">⭐</div>
+                        <p class="price-name">Roue d'avis</p>
+                        <p class="price-amount">34,90€ <span>/ mois</span></p>
+                        <p class="price-sub">+ 245€ de mise en place</p>
+                        <hr class="price-divider">
+                        <div class="price-feature"><div class="price-check">✓</div>Roue personnalisable</div>
+                        <div class="price-feature"><div class="price-check">✓</div>Envoi automatique par mail</div>
+                        <div class="price-feature"><div class="price-check">✓</div>Lien Google intégré</div>
+                        <div class="price-feature"><div class="price-check">✓</div>Tableau de bord des avis</div>
+                        <div class="price-cta"><button onclick="showView('detail-roue')">Découvrir</button></div>
+                    </div>
 
-                <div class="price-card" onclick="showView('contact-view')" style="cursor:pointer;">
-                    <div class="price-icon">🎁</div>
-                    <p class="price-name">Web fidélité</p>
-                    <p class="price-amount">39,90€ <span>/ mois</span></p>
-                    <p class="price-sub">+ 345€ de mise en place</p>
-                    <hr class="price-divider">
-                    <div class="price-feature"><div class="price-check">✓</div>Programme de points</div>
-                    <div class="price-feature"><div class="price-check">✓</div>Récompenses sur-mesure</div>
-                    <div class="price-feature"><div class="price-check">✓</div>Sans carte papier</div>
-                    <div class="price-feature"><div class="price-check">✓</div>Interface client intuitive</div>
-                    <div class="price-cta"><button onclick="showView('contact-view')">Nous contacter</button></div>
-                </div>
+                    <div class="price-card" onclick="showView('detail-fidelite')" style="cursor:pointer;">
+                        <div class="price-icon">🎁</div>
+                        <p class="price-name">Web fidélité</p>
+                        <p class="price-amount">39,90€ <span>/ mois</span></p>
+                        <p class="price-sub">+ 345€ de mise en place</p>
+                        <hr class="price-divider">
+                        <div class="price-feature"><div class="price-check">✓</div>Programme de points</div>
+                        <div class="price-feature"><div class="price-check">✓</div>Récompenses sur-mesure</div>
+                        <div class="price-feature"><div class="price-check">✓</div>Sans carte papier</div>
+                        <div class="price-feature"><div class="price-check">✓</div>Interface client intuitive</div>
+                        <div class="price-cta"><button onclick="showView('detail-fidelite')">Découvrir</button></div>
+                    </div>
             </div>
         </div>
 
@@ -1540,35 +1540,69 @@
     </footer>
 
     <script>
+        let navigationHistory = [];
+
         function showView(viewId) {
             const transitionEl = document.querySelector('.page-transition');
             const backBtn = document.getElementById('header-back-btn');
-            
-            // --- CAS 1 : ON RETOURNE À L'ACCUEIL (Pas d'animation) ---
+
             if (viewId === 'main-home') {
+                navigationHistory = [];
                 document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
                 document.getElementById(viewId).classList.add('active');
                 backBtn.style.display = 'none';
                 window.scrollTo(0, 0);
-                return; // Le "return" arrête la fonction ici, on ne lit pas la suite !
+                return;
             }
-            
-            // --- CAS 2 : ON ENTRE DANS UNE NOUVELLE PAGE (Avec animation) ---
-            // 1. Le rideau tombe
+
+            const currentView = document.querySelector('.view.active');
+            if (currentView) {
+                navigationHistory.push({ id: currentView.id, scroll: window.scrollY });
+            }
+
             transitionEl.classList.remove('is-loaded');
             transitionEl.classList.add('is-leaving');
-            
-            // 2. On attend 400ms que le rideau soit fermé
+
             setTimeout(() => {
                 document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
                 document.getElementById(viewId).classList.add('active');
                 backBtn.style.display = 'flex';
                 window.scrollTo(0, 0);
-                
-                // 3. Le rideau se lève
                 transitionEl.classList.remove('is-leaving');
                 transitionEl.classList.add('is-loaded');
-                
+            }, 225);
+        }
+
+        function goBack() {
+            const transitionEl = document.querySelector('.page-transition');
+            const backBtn = document.getElementById('header-back-btn');
+
+            if (navigationHistory.length === 0) {
+                showView('main-home');
+                return;
+            }
+
+            const previous = navigationHistory.pop();
+
+            if (previous.id === 'main-home') {
+                navigationHistory = [];
+                document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+                document.getElementById('main-home').classList.add('active');
+                backBtn.style.display = 'none';
+                window.scrollTo(0, previous.scroll);
+                return;
+            }
+
+            transitionEl.classList.remove('is-loaded');
+            transitionEl.classList.add('is-leaving');
+
+            setTimeout(() => {
+                document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+                document.getElementById(previous.id).classList.add('active');
+                backBtn.style.display = navigationHistory.length > 0 ? 'flex' : 'none';
+                window.scrollTo(0, previous.scroll);
+                transitionEl.classList.remove('is-leaving');
+                transitionEl.classList.add('is-loaded');
             }, 225);
         }
 
